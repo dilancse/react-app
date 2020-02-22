@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import ToDo from './todo-componet/todocomponet';
 
 // function App() {
 //   return (
@@ -41,6 +42,7 @@ class App extends Component{
       <div>
         <button onClick={this.increament}> Increment</button>
         {this.state.count}
+        <ToDo></ToDo>
       </div>
     );
   }
