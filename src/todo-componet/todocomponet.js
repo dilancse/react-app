@@ -30,13 +30,20 @@ class ToDo extends Component{
     }
 
     render(){
+
+        let bulletTodos = this.state.todos.map((value, index)=>{
+            return(
+                <li key={index}>{value}</li>
+            );
+        });
+
         return(
             <div>
                 <input placeholder="Enter Todo" value={this.state.currentTodo}
                 onChange={this.onInputChange}/>
                 <button onClick={this.onclick}>Add new</button>
                 <br/>
-                { this.state.todos.length === 0 ? 'no todo' : 'still have some todos'}
+        { this.state.todos.length === 0 ? 'no todo' : <ul>{bulletTodos}</ul>}
                 <br/>
                 {this.state.currentTodo}
             </div>
