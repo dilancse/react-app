@@ -30,11 +30,20 @@ class ToDo extends Component{
         });
     }
 
+    deleteTodo = index => {
+        let todosCopy = this.state.todos.slice();
+        todosCopy.splice(index, 1);
+
+        this.setState({
+            todos: todosCopy
+        });
+    }
+
     render(){
 
         let bulletTodos = this.state.todos.map((value, index)=>{
             return(
-                <SingleTODO todo={value}/>
+                <SingleTODO todo={value} delete={()=>{this.deleteTodo(index)}}/>
             );
         });
 

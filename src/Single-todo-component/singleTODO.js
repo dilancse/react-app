@@ -9,7 +9,7 @@ class SingleTODO extends Component{
 
     render(){
         return(
-        <li>{this.props.todo}<button>X</button></li>
+        <li>{this.props.todo}<button onClick={this.props.delete}>X</button></li>
         );
     }
 }
